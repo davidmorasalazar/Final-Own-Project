@@ -11,7 +11,7 @@ export const Home = () => {
 		<Container>
 			<Carousel className="carousel">
 				<Carousel.Item rounded>
-					<Link to="/characters">
+					<Link to="/dogs">
 						<img
 							className="d-block w-100"
 							src="https://images4.alphacoders.com/673/thumb-1920-673740.jpg"
