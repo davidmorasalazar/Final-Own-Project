@@ -9,6 +9,11 @@ export const Experiences = () => {
 
 	return (
 		<Container>
+			<div className="card" style={({ width: "18rem" }, { marginTop: "30px" })}>
+				<ul className="list-group list-group-flush ">
+					<li className="list-group-item text-center">Vive nuestras experiencias</li>
+				</ul>
+			</div>
 			<Carousel className="carousel1">
 				<Carousel.Item rounded>
 					<Link to="/characters">
