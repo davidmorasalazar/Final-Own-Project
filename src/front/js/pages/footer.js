@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Carousel, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-export const Home = () => {
+export const Experiences = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<Container>
-			<Carousel className="carousel">
+			<Carousel className="carousel1">
 				<Carousel.Item rounded>
 					<Link to="/characters">
 						<img
