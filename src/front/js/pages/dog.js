@@ -1,3 +1,4 @@
+
 import React, { useState, useContext, useEffect } from "react";
 import { Row, Col, Table, Media, Container, Button } from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
@@ -12,6 +13,7 @@ export function Dog(props) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 	const goBack = () => {
 		history.goBack();
 	};
@@ -19,11 +21,13 @@ export function Dog(props) {
 		<Container>
 			<Media className="mt-5 margenes m-auto">
 				{store.pets.map((each, i) => {
+
 					if (i == intId) {
 						return (
 							<div key={i}>
 								<Row>
 									<Col responsive="md">
+
 										<img
 											width={400}
 											height={300}
@@ -63,6 +67,7 @@ export function Dog(props) {
 								</Table>
 								<Button variant="dark" onClick={() => goBack()}>
 									Volver
+
 								</Button>
 							</div>
 						);

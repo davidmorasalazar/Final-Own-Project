@@ -35,6 +35,7 @@ export const Dogs = () => {
 										<p>
 											<strong>Ubicación:</strong>
 											<span>{pets.province}</span>
+
 										</p>
 									</Card.Text>
 									<ButtonToolbar
