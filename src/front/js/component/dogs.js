@@ -16,35 +16,33 @@ export const Dogs = () => {
 				<Button variant="outline-dark">Search</Button>
 			</Form> */}
 			<CardDeck className="margenes">
-				{store.dogs.map((people, i) => {
+				{store.pets.map((pets, i) => {
 					return (
 						<Col className="mt-5 mb-10" md={4} key={i}>
 							<Card>
-								<Card.Img
-									variant="top"
-									src="https://cdn.vox-cdn.com/thumbor/ELoxTLvnu6VxO_sL3l2g9pnZm_g=/0x0:1347x1534/1200x800/filters:focal(557x781:771x995)/cdn.vox-cdn.com/uploads/chorus_image/image/66748200/skywalker_saga_now_streaming_final_7b3070d1.0.jpeg"
-								/>
+								<Card.Img variant="top" src={pets.imageURL} />
 								<Card.Body>
-									<Card.Title>{people.name}</Card.Title>
+									<Card.Title>{pets.pet_name}</Card.Title>
 									<Card.Text>
 										<p>
-											<strong>Gender:</strong>
-											<span>{people.gender}</span>
+											<strong>Sexo:</strong>
+											<span>{pets.sexo}</span>
 										</p>
 										<p>
-											<strong>Hair-Color:</strong>
-											<span>{people.hair_color}</span>
+											<strong>Edad</strong>
+											<span>{pets.edad}</span>
 										</p>
 										<p>
-											<strong>Eye-Color:</strong>
-											<span>{people.eye_color}</span>
+											<strong>Ubicación:</strong>
+											<span>{pets.province}</span>
+
 										</p>
 									</Card.Text>
 									<ButtonToolbar
 										className="justify-content-between"
 										aria-label="Toolbar with Button groups">
 										<Link to={`/dog/${i}`}>
-											<Button variant="primary">Learn More</Button>
+											<Button variant="primary">Iniciar Adopción</Button>
 										</Link>
 									</ButtonToolbar>
 								</Card.Body>

@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar border border-secondary rounded navbar-light  mb-3" style={{ background: "#e3f2fd" }}>
-			{/* <Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link> */}
+		<nav className="navbar border-top shadow-sm  navbar-light  mb-3" style={{ background: "#e3f2fd" }}>
 			<div className="m-auto">
-				<Link to="/demo">
-					<button className="btn">Formulario</button>
+				<Link to="/formulario">
+					<button className="btn">Registrar mascota</button>
 				</Link>
 			</div>
 			<div className="m-auto">

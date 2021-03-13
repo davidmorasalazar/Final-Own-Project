@@ -1,71 +1,73 @@
-import React, { useState, useContext } from "react";
+
+import React, { useState, useContext, useEffect } from "react";
 import { Row, Col, Table, Media, Container, Button } from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export function Dog(props) {
+	const { store, actions } = useContext(Context);
 	const { id } = useParams();
 	const intId = parseInt(id);
 	const history = useHistory();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const goBack = () => {
 		history.goBack();
 	};
 	return (
 		<Container>
-			<Media className="mt-5 margenes">
-				{props.data.map((each, i) => {
+			<Media className="mt-5 margenes m-auto">
+				{store.pets.map((each, i) => {
+
 					if (i == intId) {
 						return (
 							<div key={i}>
 								<Row>
-									<Col>
+									<Col responsive="md">
+
 										<img
 											width={400}
 											height={300}
 											className="align-self-center mr-3"
-											src="https://api.time.com/wp-content/uploads/2019/12/cute-star-wars-characters-10.jpg"
+											src={each.imageURL}
 											alt="Generic placeholder"
 										/>
 									</Col>
-									<Col>
+									<Col responsive="md">
 										<Media.Body className="text-center">
-											<h5>{each.name}</h5>
-											<p>
-												Star Wars is an American epic space opera[1] media franchise created by
-												George Lucas, which began with the eponymous 1977 film and quickly
-												became a worldwide pop-culture phenomenon. The franchise has been
-												expanded into various films and other media, including television
-												series, video games, novels, comic books, theme park attractions, and
-												themed areas, comprising an all-encompassing fictional universe.
-											</p>
+											<h5>{each.pet_name}</h5>
+											<p>{each.description}</p>
 										</Media.Body>
 									</Col>
 								</Row>
-								<Table responsive="sm">
+								<Table responsive="md">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Birth Year</th>
-											<th>Gender</th>
-											<th>Heigth</th>
-											<th>Skin Color</th>
-											<th>Eye Color</th>
+											<th>Nombre de la Fundación</th>
+											<th>Sexo</th>
+											<th>Edad</th>
+											<th>Tamaño</th>
+											<th>Ubicación</th>
+											<th>Temperamento</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>{each.name}</td>
-											<td>{each.birth_year}</td>
-											<td>{each.gender}</td>
-											<td>{each.height}</td>
-											<td>{each.skin_color}</td>
-											<td>{each.eye_color}</td>
+											<td>{each.fundation_name}</td>
+											<td>{each.sexo}</td>
+											<td>{each.edad}</td>
+											<td>{each.tamaño}</td>
+											<td>{each.province}</td>
+											<td>{each.temperamento}</td>
 										</tr>
 									</tbody>
 								</Table>
 								<Button variant="dark" onClick={() => goBack()}>
-									Go Back
+									Volver
+
 								</Button>
 							</div>
 						);
