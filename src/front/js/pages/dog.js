@@ -17,7 +17,7 @@ export function Dog(props) {
 	};
 	return (
 		<Container>
-			<Media className="mt-5 margenes">
+			<Media className="mt-5 margenes m-auto">
 				{store.pets.map((each, i) => {
 					if (i == intId) {
 						return (
