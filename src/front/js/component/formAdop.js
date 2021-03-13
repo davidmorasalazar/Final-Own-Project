@@ -72,7 +72,7 @@ export const FormAdop = () => {
 					imageURL: res.url
 				};
 				//FETCH POST method
-				fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/pets", {
+				fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/pets", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -109,11 +109,18 @@ export const FormAdop = () => {
 						</h1>
 					</div>
 				</div>
-				<div>
-					<input type="file" name="file" onChange={changeHandler} />
-				</div>
 				<div className="text-center d-flex justify-content-center align-items-center ">
 					<form className="rounded shadow px-2" style={{ width: "600px" }} onSubmit={e => handleSubmit(e)}>
+						<div className="form-row my-2">
+							<div className="col-md ">
+								<div className="custom-file">
+									<input type="file" className="custom-file-input" onChange={changeHandler} />
+									<label className="custom-file-label" aria-describedby="inputGroupFileAddon02">
+										Elija el archivo
+									</label>
+								</div>
+							</div>
+						</div>
 						<div className="form-row my-2">
 							<div className="col-md ">
 								<input

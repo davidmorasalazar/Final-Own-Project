@@ -23,7 +23,7 @@ export function Dog(props) {
 						return (
 							<div key={i}>
 								<Row>
-									<Col>
+									<Col responsive="md">
 										<img
 											width={400}
 											height={300}
@@ -32,14 +32,14 @@ export function Dog(props) {
 											alt="Generic placeholder"
 										/>
 									</Col>
-									<Col>
+									<Col responsive="md">
 										<Media.Body className="text-center">
 											<h5>{each.pet_name}</h5>
 											<p>{each.description}</p>
 										</Media.Body>
 									</Col>
 								</Row>
-								<Table responsive="sm">
+								<Table responsive="md">
 									<thead>
 										<tr>
 											<th>Nombre de la Fundación</th>
