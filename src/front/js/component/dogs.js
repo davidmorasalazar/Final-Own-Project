@@ -56,6 +56,36 @@ export const Dogs = () => {
 								" "
 							)}
 						</>
+						<Col className="mt-5 mb-10" md={4} key={i}>
+							<Card>
+								<Card.Img variant="top" src={pets.imageURL} />
+								<Card.Body>
+									<Card.Title>{pets.pet_name}</Card.Title>
+									<Card.Text>
+										<p>
+											<strong>Sexo:</strong>
+											<span>{pets.sexo}</span>
+										</p>
+										<p>
+											<strong>Edad</strong>
+											<span>{pets.edad}</span>
+										</p>
+										<p>
+											<strong>Ubicación:</strong>
+											<span>{pets.province}</span>
+
+										</p>
+									</Card.Text>
+									<ButtonToolbar
+										className="justify-content-between"
+										aria-label="Toolbar with Button groups">
+										<Link to={`/dog/${i}`}>
+											<Button variant="primary">Iniciar Adopción</Button>
+										</Link>
+									</ButtonToolbar>
+								</Card.Body>
+							</Card>
+						</Col>
 					);
 				})}
 			</CardDeck>

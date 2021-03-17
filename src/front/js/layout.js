@@ -9,6 +9,7 @@ import { SignUp } from "./pages/sign-up.jsx"; //Include SignUp
 
 import { Navbarcentral } from "./component/navbarcentral";
 import { Navbar } from "./component/navbar";
+
 import { Dogs } from "./component/dogs";
 import { Dog } from "./pages/dog";
 import { Cats } from "./component/cats";
@@ -21,6 +22,7 @@ import { NotFound } from "./component/not-found.jsx";
 
 //include PrivateRoute
 import { PrivateRoute } from "./routers/private-route";
+
 
 //create your first component
 const Layout = () => {
@@ -37,15 +39,20 @@ const Layout = () => {
 	// }, []);
 
 	return (
+
 		<div className="d-flex flex-column h-100 ">
+
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbarcentral />
 					<Navbar />
+
 					<Switch>
 						<Route exact path="/">
 							<Home />
+							<Experiences />
 						</Route>
+
 						<Route exact path="/dogs">
 							<Dogs data={store.dogs} />
 						</Route>
@@ -73,6 +80,7 @@ const Layout = () => {
 						</Route>
 					</Switch>
 					<FooterCentral />
+
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
