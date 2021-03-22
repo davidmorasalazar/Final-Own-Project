@@ -4,25 +4,30 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export const Dogs = () => {
+export const Cats = () => {
 	const { store, actions } = useContext(Context);
 	const [searchItem, setSearch] = useState();
+	console.log(store.pets.pet);
 	useEffect(() => {
 		actions.loadDogs();
 		// setLoading(false);
 	}, []);
+
 	return (
 		<Container>
-			<h1 className="text-center mt-5">Perritos</h1>
+			<h1 className="text-center mt-5">Gatitos</h1>
 			{/* <Form inline>
 				<FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={actions.search} />
 				<Button variant="outline-dark">Search</Button>
 			</Form> */}
+			{/* {store.pets.pet ? (
+				""
+			) : ( */}
 			<CardDeck className="margenes">
 				{store.pets.map((pets, i) => {
 					return (
 						<>
-							{pets.pet == "perro" ? (
+							{pets.pet == "gato" ? (
 								<Col className="mt-5 mb-10" md={4} key={i}>
 									<Card className="shadow" style={{ width: "18rem" }}>
 										<Card.Img variant="top" src={pets.imageURL} style={{ height: "18rem" }} />
@@ -59,6 +64,7 @@ export const Dogs = () => {
 					);
 				})}
 			</CardDeck>
+			{/* )} */}
 		</Container>
 	);
 };

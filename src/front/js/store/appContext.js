@@ -21,6 +21,10 @@ const injectContext = PassedComponent => {
 			})
 		);
 
+		useEffect(() => {
+			state.actions.loggedIn();
+		}, []);
+
 		// The initial value for the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared
 		// on the state of this component

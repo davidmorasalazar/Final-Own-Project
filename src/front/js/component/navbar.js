@@ -1,22 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Button from "react-bootstrap/Button";
 export const Navbar = () => {
 	return (
 		<nav className="navbar border-top shadow-sm  navbar-light  mb-3" style={{ background: "#e3f2fd" }}>
 			<div className="m-auto">
 				<Link to="/formulario">
-					<button className="btn">Registrar mascota</button>
+					<Button className="btn" variant="outline-primary">
+						Registrar mascota
+					</Button>{" "}
 				</Link>
 			</div>
 			<div className="m-auto">
 				<Link to="/dogs">
-					<button className="btn">Perritos</button>
+					<Button className="btn" variant="outline-primary">
+						Perros
+					</Button>
 				</Link>
 			</div>
 			<div className="m-auto">
-				<Link to="/demo">
-					<button className="btn">Gatitos</button>
+				<Link to="/cats">
+					<Button className="btn" variant="outline-primary">
+						Gatos
+					</Button>
+				</Link>
+			</div>
+			<div className="m-auto">
+				<Link to="/AboutUs">
+					<Button className="btn" variant="outline-primary">
+						¿Quiénes Somos?
+					</Button>
 				</Link>
 			</div>
 		</nav>

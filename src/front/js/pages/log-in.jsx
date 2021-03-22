@@ -21,7 +21,7 @@ export function LogIn() {
 			user_name: user_name
 		};
 
-		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/log-in/", {
+		fetch("https://3001-blue-cattle-jgnu48gm.ws-us03.gitpod.io/log-in/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -41,6 +41,7 @@ export function LogIn() {
 				sessionStorage.setItem("user_token", data.token);
 				sessionStorage.setItem("is_logged", "true");
 				actions.loggedIn();
+				console.log("data", data.token);
 				console.log("Succesful log in");
 			})
 			.catch(error => {
@@ -52,7 +53,7 @@ export function LogIn() {
 		<div className="container alto mt-3">
 			<div className="row">
 				<div className="col-md">
-					<h1 className="font text-center mb-0 mt-3">Log in</h1>
+					<h1 className="font text-center mb-0 mt-3">Ingresar</h1>
 				</div>
 			</div>
 			<hr />
@@ -63,7 +64,7 @@ export function LogIn() {
 							<input
 								type="text"
 								className="form-control form-control-lg"
-								placeholder="User name"
+								placeholder="Nombre de usuario"
 								required
 								onChange={e => setUser(e.target.value)}
 							/>
@@ -74,7 +75,7 @@ export function LogIn() {
 							<input
 								type="password"
 								className="form-control form-control-lg"
-								placeholder="Password"
+								placeholder="Contraseña"
 								required
 								onChange={e => setPassword(e.target.value)}
 							/>
@@ -82,10 +83,10 @@ export function LogIn() {
 					</div>
 					<div className="submit-row my-2 d-flex justify-content-end">
 						<button type="submit" className="btn btn-primary mr-1">
-							Log In
+							Ingresar
 						</button>
 						<button type="reset" className="btn btn-danger ml-1">
-							Cancel
+							Cancelar
 						</button>
 					</div>
 				</form>
@@ -93,7 +94,7 @@ export function LogIn() {
 			<div className="row mt-3">
 				<div className="col-md">
 					<p className="text-center">
-						Do not have an account? <Link to="/sign-up/">Sign up</Link>
+						¿Aún no tiene una cuenta? <Link to="/sign-up/">Registrarse</Link>
 					</p>
 				</div>
 			</div>

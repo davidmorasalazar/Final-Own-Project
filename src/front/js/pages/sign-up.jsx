@@ -36,7 +36,7 @@ export function SignUp() {
 		};
 
 		//FETCH POST method
-		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/sign-up/", {
+		fetch("https://3001-blue-cattle-jgnu48gm.ws-us03.gitpod.io/sign-up/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -64,7 +64,7 @@ export function SignUp() {
 		<div className="container my-3">
 			<div className="row">
 				<div className="col-md">
-					<h1 className="font text-center mb-0 mt-3">Sign Up</h1>
+					<h1 className="font text-center mb-0 mt-3">Registrarse</h1>
 				</div>
 			</div>
 			<hr />
@@ -75,7 +75,7 @@ export function SignUp() {
 							<input
 								type="text"
 								className="form-control form-control-lg"
-								placeholder="Fundation Name"
+								placeholder="Nombre de la Fundación"
 								required
 								onChange={e => setFundation(e.target.value)}
 							/>
@@ -86,7 +86,7 @@ export function SignUp() {
 							<input
 								type="text"
 								className="form-control form-control-lg"
-								placeholder="User"
+								placeholder="Usuario"
 								required
 								onChange={e => setUser(e.target.value)}
 							/>
@@ -108,7 +108,7 @@ export function SignUp() {
 							<input
 								type="text"
 								className="form-control form-control-lg"
-								placeholder="Phone Number"
+								placeholder="Número de teléfono"
 								required
 								onChange={e => setPhone(e.target.value)}
 							/>
@@ -119,7 +119,7 @@ export function SignUp() {
 							<input
 								type="password"
 								className="form-control form-control-lg"
-								placeholder="Password"
+								placeholder="Contraseña"
 								required
 								onChange={e => setPassword(e.target.value)}
 							/>
@@ -130,11 +130,11 @@ export function SignUp() {
 							<select
 								className="form-control form-control-lg"
 								onChange={e => setProvince(e.target.value)}>
-								<option selected>Province</option>
-								<option>Limon</option>
+								<option selected>Provincia</option>
+								<option>Limón</option>
 								<option>Cartago</option>
 								<option>Heredia</option>
-								<option>San Jose</option>
+								<option>San José</option>
 								<option>Alajuela</option>
 								<option>Puntarenas</option>
 								<option>Guanacaste</option>
@@ -143,10 +143,10 @@ export function SignUp() {
 					</div>
 					<div className="submit-row my-2 d-flex justify-content-end">
 						<button type="submit" className="btn btn-primary mr-1">
-							Sign Up
+							Registrarse
 						</button>
 						<button type="reset" className="btn btn-danger ml-1">
-							Cancel
+							Cancelar
 						</button>
 					</div>
 				</form>
@@ -154,7 +154,7 @@ export function SignUp() {
 			<div className="row mt-3">
 				<div className="col-md">
 					<p className="text-center">
-						Already have an account? <Link to="/log-in">Log in</Link>
+						¿Ya tiene una cuenta? <Link to="/log-in">Ingresar</Link>
 					</p>
 				</div>
 			</div>

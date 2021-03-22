@@ -7,7 +7,7 @@ import WhatsAppWidget from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
 import "../../styles/index.scss";
 
-export function Dog(props) {
+export function Cat(props) {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
 	const intId = parseInt(id);
@@ -25,56 +25,53 @@ export function Dog(props) {
 					return (
 						<div key={i} id="relative">
 							<Row>
-								<Col md>
+								<Col sm>
 									<Image
 										style={({ maxHeight: "370px" }, { maxWidth: "370px" })}
-										className="align-self-center mr-3 w-100"
+										className="align-self-center mr-3"
 										src={each.imageURL}
 										alt="Generic placeholder"
 										rounded
 									/>
 								</Col>
-								<Col md>
+								<Col sm>
 									<Media.Body className="text-center">
-										<h5 className="text-center">{each.pet_name}</h5>
+										<h5>{each.pet_name}</h5>
 										<p className="text-justify">{each.description}</p>
 										<h5 className="text-left">Temperamento:</h5>
-										<p className="text-left">{each.temperamento}</p>
+										<p>{each.temperamento}</p>
 									</Media.Body>
 								</Col>
 							</Row>
 							<Row className="mt-4">
-								<Col md>
-									<Table responsive="md">
-										<thead>
-											<tr>
-												<th className="text-center">Nombre de la Fundación</th>
-												<th className="text-center">Sexo</th>
-												<th className="text-center">Edad en meses</th>
-												<th className="text-center">Tamaño en CM</th>
-												<th className="text-center">Ubicación</th>
-												<th className="text-center">Vacunas</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td className="text-center">{each.fundation_name}</td>
-												<td className="text-center">{each.sexo}</td>
-												<td className="text-center">{each.edad}</td>
-												<td className="text-center">{each.tamaño}</td>
-												<td className="text-center">{each.province}</td>
-												<td className="text-center">{each.vacunas ? "Si" : "No"}</td>
-											</tr>
-										</tbody>
-									</Table>
-								</Col>
+								<Table responsive="md">
+									<thead>
+										<tr>
+											<th>Nombre de la Fundación</th>
+											<th>Sexo</th>
+											<th>Edad</th>
+											<th>Tamaño en CM</th>
+											<th>Ubicación</th>
+											<th>Vacunas</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{each.fundation_name}</td>
+											<td>{each.sexo}</td>
+											<td>{each.edad}</td>
+											<td>{each.tamaño}</td>
+											<td>{each.province}</td>
+											{/* <td>{each.temperamento}</td> */}
+											<td>{each.vacunas ? "Si" : "No"}</td>
+										</tr>
+									</tbody>
+								</Table>
 							</Row>
-							<Row className="">
-								<Col md>
-									<Button variant="dark" onClick={() => goBack()}>
-										Volver
-									</Button>
-								</Col>
+							<Row>
+								<Button variant="dark" onClick={() => goBack()}>
+									Volver
+								</Button>
 							</Row>
 							<Row>
 								<Col className="fixed-bottom">
@@ -84,7 +81,6 @@ export function Dog(props) {
 										message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
 										textReplyTime="Típicamente responde en una hora"
 										sendButton="Enviar"
-										className="prueba"
 									/>
 								</Col>
 							</Row>
@@ -96,6 +92,6 @@ export function Dog(props) {
 	);
 }
 
-Dog.propTypes = {
+Cat.propTypes = {
 	data: PropTypes.any
 };

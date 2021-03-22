@@ -10,7 +10,7 @@ class User(db.Model):
     fundation_name = db.Column(db.String(200), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(300), unique=False, nullable=False)
-    phone_number = db.Column(db.String(20), unique=True, nullable=False)
+    phone_number = db.Column(db.String(300), unique=True, nullable=False)
     province = db.Column(db.String(20), unique=False, nullable=False)
     pet = db.relationship('Pets', lazy=True) #Se crea relacion para llave foranea 
     # cat = db.relationship('Cats', lazy=True) #Se crea relacion para llave foranea 
@@ -42,7 +42,7 @@ class Pets(db.Model):
     sexo = db.Column(db.String(80), unique=False, nullable=False)
     pet_name = db.Column(db.String(2000), unique=False, nullable=False)
     user_name = db.Column(db.String(2000), unique=False, nullable=False)
-    phone_number = db.Column(db.Integer, unique=False, nullable=False)
+    phone_number = db.Column(db.String(300), unique=False, nullable=False)
     pet = db.Column(db.String(2000), unique=False, nullable=False)
     province = db.Column(db.String(2000), unique=False, nullable=False)
     imageURL = db.Column(db.String(2000), unique=False, nullable=False)
